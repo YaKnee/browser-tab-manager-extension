@@ -4,6 +4,7 @@ Firefox* browser extension that allows you to close open tabs and store their UR
 ### TODO:
 
 - [ ] Make Close all button work
+- [ ] Make it so all stored items are cached/stored properly so if browser crashes/something else, they are still retrievable
 - [ ] Create actual Icon
 - [ ] Move overflow-x scrollbar for long url titles be below title so as to still read
 - [ ] Maybe add site's favicon before title (not within span so scrolling doesnt move it)
