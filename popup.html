@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="https://github.com/YaKnee/browser-tab-manager-extension">
+      <h1>Tab Manager</h1>
+    </a>
+
+    <div id="master-buttons">
+        <button id="store-all-btn" title="Store all tabs except the current tab">Store All</button>
+        <button id="restore-all-btn" title="Reopens all tabs found in stored tabs list">Restore All</button>
+        <button id="delete-all-btn" title="Deletes all stored tabs">Delete All</button>
+    </div>
+
+    <div class="tab-container">
+        <div id="open-tabs-btn" class="tab active">Open Tabs</div>
+        <div id="stored-tabs-btn" class="tab">Stored Tabs</div>
+    </div>
+    <div class="tab-content">
+        <div id="open-tabs">
+            <h2>Open Tabs</h2>
+            <div id="tab-list"></div>
+        </div>
+        <div id="stored-tabs" style="display: none;">
+            <h2>Stored Tabs</h2>
+            <div id="stored-tab-list"></div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
