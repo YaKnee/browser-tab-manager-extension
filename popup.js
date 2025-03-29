@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const storedTabList = document.getElementById("stored-tab-list");
   const openTabButton = document.getElementById("open-tabs-btn");
   const storedTabButton = document.getElementById("stored-tabs-btn");
-  const storeAllBtn = document.getElementById("store-all-btn"); // Renamed from closeAllBtn
+  const storeAllBtn = document.getElementById("store-all-btn");
   const restoreAllBtn = document.getElementById("restore-all-btn");
   const deleteAllBtn = document.getElementById("delete-all-btn");
   const openTabSection = document.getElementById("open-tabs");
@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loadStoredTabs();
   });
 
-  // Store All button now stores all tabs, except the current tab
   storeAllBtn.addEventListener("click", () => {
     browser.tabs.query({ active: true, currentWindow: true }).then((tabs) => {
       browser.runtime
@@ -125,14 +124,14 @@ document.addEventListener("DOMContentLoaded", function () {
   restoreAllBtn.addEventListener("click", () => {
     browser.runtime.sendMessage({ action: "restoreAllTabs" }).then(() => {
       browser.runtime.sendMessage({ action: "deleteAllStoredTabs" }).then(() => {
-        loadStoredTabs(); // Clear stored list after restore all
+        loadStoredTabs();
       });
     });
   });
 
   deleteAllBtn.addEventListener("click", () => {
     browser.runtime.sendMessage({ action: "deleteAllStoredTabs" }).then(() => {
-      loadStoredTabs(); // Ensure UI updates immediately
+      loadStoredTabs();
     });
   });
 
